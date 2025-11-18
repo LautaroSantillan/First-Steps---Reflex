@@ -1,12 +1,12 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 
 import reflex as rx
-
 from rxconfig import config
 # Components
 from first_steps.components.navbar import navbar
 from first_steps.views.header.header import header
 from first_steps.components.footer import footer
+from first_steps.components.links import links
 # Styles
 import first_steps.styles.styles as styles
 
@@ -19,17 +19,17 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
+                links(),
                 max_Width=styles.MAX_WIDTH,
                 width="100%",
-                margin_y=styles.Size.BIG.value
+                margin_bottom="20px"
+                #margin_y=styles.Size.BIG.value
             ),
         ),
         footer(),
-        background_image="linear-gradient(to top, #000, #31175e)",
-        #background_color=styles.Color.PRIMARY.value,
+        background_image=f"linear-gradient(to top, #000, #31175e)",
         min_height="100vh",
-        display="grid",
-        grid_template_rows="auto 1fr auto"
+        display="grid"
     )
 
 app = rx.App(

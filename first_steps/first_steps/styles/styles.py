@@ -2,14 +2,16 @@ import reflex as rx
 from enum import Enum
 
 # Constants
-MAX_WIDTH = "600px"
+MAX_WIDTH = "900px"
 
 # Sizes
 class Size(Enum):
     ZERO = "0px !important"
     SMALL = "0.5em"
     DEFAULT = "1em"
+    MEDIUM = "1.5em"
     BIG = "2em"
+    XXL = "2.5em"
 
 class Color(Enum):
     PRIMARY = "#060443"
@@ -17,10 +19,12 @@ class Color(Enum):
     BACKGROUND = "#31175e"
     CONTENT = "#7c849c"
 
+SHADOW_VALUE = f"0 0 10px {Color.PRIMARY.value}, 0 0 20px {Color.PRIMARY.value}, 0 0 30px rgba(83, 23, 87, 0.5)"
 class Font(Enum):
     DEFAULT = "Poppins-Light"
     TITLE = "Poppins-Bold"
     LOGO = "Comfortaa-Medium"
+    COURIER = "Courier New, Courier, monospace"
 
 # Styles
 navbar_p = dict(
@@ -28,25 +32,8 @@ navbar_p = dict(
     font_size=Size.BIG.value
 )
 
-
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
-    "Button": {
-        "width": "100%",
-        "height": "100%",
-        "white_space": "normal",
-        "text_align": "start",
-        "padding": Size.SMALL.value,
-        "border_radius": Size.DEFAULT.value,
-        "background_color": Color.BACKGROUND.value,
-        "_hover":{
-            "background_color": Color.PRIMARY.value
-        }  
-    },
-    "Link": {
-        "text_decoration": "none",
-        "_hover": {}
-    }
 }
 
 # --- Objeto Theme ---

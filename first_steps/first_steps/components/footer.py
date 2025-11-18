@@ -12,19 +12,10 @@ def footer() -> rx.Component:
                 width="25px", 
                 height="25px"
             ),
-            rx.text(f"© 2010-{datetime.date.today().year}"),
-            rx.link(
-                "DATA RIDERS",
-                href="https://datariders.io/",
-                is_external=True,
-                font_size=Size.DEFAULT
-            ),
-            rx.text(
-                "- Todos los Derechos Reservados.",
-                font_size=Size.DEFAULT
-            ),
+            rx.text(f"© 2010-{datetime.date.today().year} DATA RIDERS - Todos los Derechos Reservados."),
             margin=Size.DEFAULT,
         ),
         width="100%",
-        border_top="0.125rem dashed white"
+        border_top=f"0.125rem dashed {styles.Color.BACKGROUND.value}",
+        text_align="center"
     )
