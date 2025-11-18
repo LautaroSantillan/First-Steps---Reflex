@@ -1,6 +1,7 @@
 import reflex as rx
 
 from first_steps.components.navbar_btn import navbar_btn
+from first_steps.routes import Route
 import first_steps.styles.styles as styles
 
 def navbar() -> rx.Component:
@@ -24,7 +25,7 @@ def navbar() -> rx.Component:
             ),
             rx.center(
                 navbar_btn("SITIO OFICIAL", "https://datariders.io/", display=["none", "flex", "flex"]),
-                navbar_btn("CONTACTO", "https://google.com"),
+                navbar_btn("CONTACTO", Route.CONTACT.value),
                 gap=["1rem", "3rem"],
                 display="flex"
             ),

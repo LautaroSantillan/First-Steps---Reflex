@@ -16,7 +16,7 @@ def navbar_btn(text: str, url: str, **kwargs) -> rx.Component:
             },
         ),
         href=url,
-        is_external=True,
+        is_external=False,
         position="relative",
         letter_spacing="0.125rem",
         text_decoration="none",

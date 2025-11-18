@@ -22,9 +22,9 @@ def header() -> rx.Component:
             padding_x=["20px", "30px"]
         ),
         rx.flex(
-            info("+15", "años de experiencia"),
-            info("+...", "cantidad de proyectos"),
-            info("+...", "clientes satisfechos"),
+            info("15+", "años de experiencia"),
+            info("...+", "cantidad de proyectos"),
+            info("...+", "clientes satisfechos"),
             justify_content="center", 
             gap=styles.Size.DEFAULT.value,
             width="100%",
