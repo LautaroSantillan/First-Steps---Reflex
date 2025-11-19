@@ -4,7 +4,7 @@ config = rx.Config(
     app_name="first_steps",
     cors_allowed_origins=[
         "http://localhost:3000",
-        "https://first-steps"
+        "https://demo-reflex.vercel.app/"
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),

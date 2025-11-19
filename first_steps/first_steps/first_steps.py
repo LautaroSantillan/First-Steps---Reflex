@@ -2,11 +2,10 @@
 
 import reflex as rx
 from rxconfig import config
-# Styles
 import first_steps.styles.styles as styles
 
-from first_steps.pages.index import index
-from first_steps.pages.contact import contact
+# class State(rx.State):
+#     """Define your app state here."""
 
 app = rx.App(
     theme=styles.CUSTOM_THEME
