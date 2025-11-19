@@ -13,8 +13,7 @@ def navbar() -> rx.Component:
                     height="auto",
                     alt="Logotipo de Data Riders"
                 ),
-                href="https://datariders.io/",
-                is_external=True,
+                href=Route.INDEX.value,
                 _hover={
                     "cursor": "pointer",
                     "box_shadow": f"{styles.SHADOW_VALUE}",

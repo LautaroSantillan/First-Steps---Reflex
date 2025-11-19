@@ -1,54 +1,41 @@
 import reflex as rx
 
-class DynamicFormState(rx.State):
+class ContactFormState(rx.State):
+    """Estado para manejar un formulario de contacto estático."""
+    # Aquí almacenaremos los datos enviados
     form_data: dict = {}
-    form_fields: list[str] = ["first_name", "last_name", "email"]
-
-    @rx.var(cache=True)
-    def form_field_placeholders(self) -> list[str]:
-        return [
-            " ".join(w.capitalize() for w in field.split("_"))
-            for field in self.form_fields
-        ]
-
-    @rx.event
-    def add_field(self, form_data: dict):
-        new_field = form_data.get("new_field")
-        if not new_field:
-            return
-        field_name = new_field.strip().lower().replace(" ", "_")
-        self.form_fields.append(field_name)
-
     @rx.event
     def handle_submit(self, form_data: dict):
+        """Maneja el envío del formulario."""
+        # Los datos recibidos serán: {"first_name": "...", "last_name": "...", "email": "...", "mensaje": "..."}
         self.form_data = form_data
+        print("Datos recibidos:", self.form_data)
 
-
-def dynamic_form():
+def contact_form() -> rx.Component:
     return rx.vstack(
         rx.form(
             rx.vstack(
-                rx.foreach(
-                    DynamicFormState.form_fields,
-                    lambda field, idx: rx.input(
-                        placeholder=DynamicFormState.form_field_placeholders[idx],
-                        name=field,
-                    ),
-                ),
-                rx.button("Submit", type="submit"),
+                rx.input(placeholder="Nombre", name="first_name"),
+                rx.input(placeholder="Apellido", name="last_name"),
+                rx.input(placeholder="Email", name="email", type="email"),
+                rx.text_area(placeholder="Tu Mensaje", name="mensaje"),
+                rx.button(
+                    "Enviar Consulta", 
+                    type="submit",
+                    #height=["3em", "4em"] 
+                ),  
+                width="100%",
+                spacing="3"
             ),
-            on_submit=DynamicFormState.handle_submit,
+            on_submit=ContactFormState.handle_submit,
             reset_on_submit=True,
+            width="100%"
         ),
-        rx.form(
-            rx.hstack(
-                rx.input(placeholder="New Field", name="new_field"),
-                rx.button("+", type="submit"),
-            ),
-            on_submit=DynamicFormState.add_field,
-            reset_on_submit=True,
-        ),
+        
         rx.divider(),
-        rx.heading("Results"),
-        rx.text(DynamicFormState.form_data.to_string()),
+        rx.heading("Datos Recibidos (Debug)", size="5"),
+        rx.text(ContactFormState.form_data.to_string()),
+        width="100%",
+        padding_x=["1em", "2em", "4em"], 
+        spacing="5"
     )

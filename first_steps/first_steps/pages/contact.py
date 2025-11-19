@@ -5,7 +5,7 @@ import first_steps.utils as utils
 from first_steps.components.navbar import navbar
 from first_steps.views.header.header import header
 from first_steps.components.footer import footer
-from first_steps.components.form import dynamic_form
+from first_steps.components.form import contact_form
 # Styles
 import first_steps.styles.styles as styles
 #Route
@@ -28,7 +28,7 @@ def contact() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                dynamic_form(),
+                contact_form(),
                 max_Width=styles.MAX_WIDTH,
                 width="100%",
                 margin_bottom="20px"
