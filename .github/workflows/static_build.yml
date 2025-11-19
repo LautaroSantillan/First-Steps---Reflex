@@ -1,0 +1,36 @@
+name: Static Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    if: github.repository == 'LautaroSantillan/First-Steps---Reflex'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run build script
+        run: |
+          chmod +x ./first_steps/first_steps/remote_build.sh
+          ./first_steps/first_steps/remote_build.sh
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update static build
+          commit_user_name: Lautaro Ezequiel Santillan [GitHub Actions]
+          commit_user_email: santillanlautaro03@gmail.com
+          commit_author: LautaroSantillan <santillanlautaro03@gmail.com>
