@@ -7,15 +7,7 @@ INDEX_META = [
     {"name": "og:type", "content": "website"},
     {"name": "og:title", "content": INDEX_TITLE},
     {"name": "og:description", "content": INDEX_DESCRIPTION},
-]
-
-# Metadatos para la página de contacto (contact)
-CONTACT_TITLE = "DEMO | Contacto"
-CONTACT_DESCRIPTION = "Página de contacto y formulario para Data Riders."
-CONTACT_META = [
-    {"name": "og:type", "content": "website"},
-    {"name": "og:title", "content": CONTACT_TITLE},
-    {"name": "og:description", "content": CONTACT_DESCRIPTION},
+    {"rel": "icon", "href": "../assets/logotipo.png", "type": "image/png"}
 ]
 
 def lang() -> rx.Component:

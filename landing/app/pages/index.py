@@ -13,7 +13,8 @@ import app.styles.styles as styles
 @rx.page(
     title=utils.INDEX_TITLE,
     description=utils.INDEX_DESCRIPTION,
-    meta=utils.INDEX_META
+    meta=utils.INDEX_META,
+    route="/"
 )
 
 def index() -> rx.Component:
@@ -26,7 +27,7 @@ def index() -> rx.Component:
                 links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
-                margin_bottom="20px"
+                margin_bottom="15px"
             ),
         ),
         footer(),

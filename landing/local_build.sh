@@ -1,4 +1,4 @@
-cd first_steps
+cd landing
 python -m venv .venv
 venv/Scripts/activate.bat
 pip install --upgrade pip
