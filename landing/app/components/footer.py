@@ -16,6 +16,6 @@ def footer() -> rx.Component:
             margin=Size.DEFAULT,
         ),
         width="100%",
-        border_top=f"0.125rem dashed {styles.Color.BLUE_BTN.value}",
+        border_top=f"0.125rem dashed {styles.Color.WHITE.value}",
         text_align="center"
     )

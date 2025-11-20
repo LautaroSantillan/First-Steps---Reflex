@@ -7,7 +7,7 @@ def header() -> rx.Component:
         rx.text(
             "¡Expandi tu negocio con nosotros!",
             font_size=[styles.Size.LARGE.value, styles.Size.XXL.value],
-            margin_bottom=styles.Size.SMALL.value,
+            margin_y=styles.Size.SMALL.value,
             font_weight=styles.Weight.BOLD.value,
             font_family=styles.Font.DEFAULT.value,
             text_align="center",

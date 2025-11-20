@@ -30,7 +30,9 @@ def index() -> rx.Component:
             ),
         ),
         footer(),
-        background_image=f"linear-gradient(to top, #000, #31175e)",
+        background="center/cover url('/bg-contacto-scaled.jpg')", 
+        width="100%",
+        background_attachment="fixed",
         min_height="100vh",
         display="grid",
         color="white"

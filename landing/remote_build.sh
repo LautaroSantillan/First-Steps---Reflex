@@ -15,7 +15,7 @@ rm -rf public
 # 6. Inicializa Reflex (Asegura que el proyecto esté listo)
 reflex init
 # 7. Exporta el frontend (genera frontend.zip)
-API_URL=https://demo-reflex.vercel.app/ reflex export --frontend-only
+API_URL=demos-data-riders.vercel.app reflex export --frontend-only
 # 8. Descomprime los archivos estáticos en la carpeta 'public'
 unzip frontend.zip -d public
 # 9. Limpia los archivos temporales de exportación
